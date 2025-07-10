@@ -7,10 +7,10 @@ import Footer from '@/components/Footer';
 export default function HomePage() {
     return (
         <main className="container mx-auto px-4">
-            <CombinedIntroSection />
-            <SkillsSection />
-            <FeaturedProjects />
-            <Footer />
+            <CombinedIntroSection/>
+            <SkillsSection/>
+            <FeaturedProjects/>
+            <Footer/>
         </main>
     );
 }

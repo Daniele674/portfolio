@@ -2,18 +2,18 @@
 
 'use client'
 
-import { useState } from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import {usePathname} from 'next/navigation';
+import {motion, AnimatePresence} from 'framer-motion';
 import ThemeSwitcher from './ThemeSwitcher';
-import { FiMenu, FiX } from 'react-icons/fi';
+import {FiMenu, FiX} from 'react-icons/fi';
 
 const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Chi sono', href: '/about' },
-    { name: 'Progetti', href: '/projects' },
-    { name: 'Contatti', href: '/contact' },
+    {name: 'Home', href: '/'},
+    {name: 'Chi sono', href: '/about'},
+    {name: 'Progetti', href: '/projects'},
+    {name: 'Contatti', href: '/contact'},
 ];
 
 export default function Header() {
@@ -22,7 +22,8 @@ export default function Header() {
 
     return (
         // Header diventa sticky, con sfondo sfocato e un bordo inferiore
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+        <header
+            className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
             <nav className="w-full max-w-4xl mx-auto flex items-center justify-between py-4 px-4">
                 {/* Logo / Nome */}
                 <Link
@@ -51,14 +52,14 @@ export default function Header() {
                             </Link>
                         );
                     })}
-                    <ThemeSwitcher />
+                    <ThemeSwitcher/>
                 </div>
 
                 {/* Menu Hamburger (visibile solo su mobile) */}
                 <div className="md:hidden flex items-center gap-4">
-                    <ThemeSwitcher />
+                    <ThemeSwitcher/>
                     <button onClick={() => setIsOpen(!isOpen)} aria-label="Apri menu">
-                        <FiMenu size={24} className="text-gray-800 dark:text-gray-200" />
+                        <FiMenu size={24} className="text-gray-800 dark:text-gray-200"/>
                     </button>
                 </div>
             </nav>
@@ -67,18 +68,19 @@ export default function Header() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{opacity: 0, y: -20}}
+                        animate={{opacity: 1, y: 0}}
+                        exit={{opacity: 0, y: -20}}
+                        transition={{duration: 0.2}}
                         className="md:hidden absolute top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40"
                     >
-                        <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200 dark:border-gray-800">
+                        <div
+                            className="flex justify-between items-center px-4 py-4 border-b border-gray-200 dark:border-gray-800">
                             <Link href="/" className="font-bold text-xl" onClick={() => setIsOpen(false)}>
                                 Daniele Gregori
                             </Link>
                             <button onClick={() => setIsOpen(false)} aria-label="Chiudi menu">
-                                <FiX size={24} className="text-gray-800 dark:text-gray-200" />
+                                <FiX size={24} className="text-gray-800 dark:text-gray-200"/>
                             </button>
                         </div>
                         <div className="flex flex-col items-center py-6">

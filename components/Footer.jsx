@@ -3,24 +3,24 @@
 'use client'; // Necessario per framer-motion
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import { FiMail } from 'react-icons/fi';
+import {motion} from 'framer-motion';
+import {FaGithub, FaLinkedin} from 'react-icons/fa6';
+import {FiMail} from 'react-icons/fi';
 
 const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Chi sono', href: '/about' },
-    { name: 'Progetti', href: '/projects' },
+    {name: 'Home', href: '/'},
+    {name: 'Chi sono', href: '/about'},
+    {name: 'Progetti', href: '/projects'},
 ];
 
 export default function Footer() {
     return (
         <motion.footer
             className="border-t border-gray-200 dark:border-gray-800 mt-16 md:mt-24"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, amount: 0.2}}
+            transition={{duration: 0.5}}
         >
             <div className="max-w-4xl mx-auto px-4 py-8">
 
@@ -39,17 +39,21 @@ export default function Footer() {
                     </div>
 
                     <div className="flex items-center gap-5">
-                        <a href="https://github.com/tuoutente" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                            <FaGithub size={24} />
+                        <a href="https://github.com/tuoutente" target="_blank" rel="noopener noreferrer"
+                           aria-label="GitHub"
+                           className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                            <FaGithub size={24}/>
                         </a>
-                        <a href="https://linkedin.com/in/tuonome" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            <FaLinkedin size={24} />
+                        <a href="https://linkedin.com/in/tuonome" target="_blank" rel="noopener noreferrer"
+                           aria-label="LinkedIn"
+                           className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            <FaLinkedin size={24}/>
                         </a>
                     </div>
                 </div>
 
                 {/* Divisore */}
-                <hr className="border-gray-200 dark:border-gray-700" />
+                <hr className="border-gray-200 dark:border-gray-700"/>
 
                 {/* Sezione inferiore con copyright e "built with" */}
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6 text-sm">

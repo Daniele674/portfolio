@@ -2,13 +2,13 @@
 
 'use client'; // Necessario per framer-motion
 
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 // Importiamo la nuova struttura dati
-import { categorizedSkills } from '@/data/portfolio';
+import {categorizedSkills} from '@/data/portfolio';
 
 // Definiamo le animazioni per un codice più leggibile
 const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {opacity: 0},
     show: {
         opacity: 1,
         transition: {
@@ -18,8 +18,8 @@ const containerVariants = {
 };
 
 const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { type: 'spring' } },
+    hidden: {y: 20, opacity: 0},
+    show: {y: 0, opacity: 1, transition: {type: 'spring'}},
 };
 
 export default function SkillsSection() {
@@ -27,10 +27,10 @@ export default function SkillsSection() {
         <motion.section
             id="skills"
             className="mb-16 md:mb-24"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, amount: 0.2}}
+            transition={{duration: 0.5}}
         >
             <h2 className="text-center text-3xl font-bold mb-12 text-gray-900 dark:text-gray-100">
                 Le mie Competenze Tecniche
@@ -47,7 +47,7 @@ export default function SkillsSection() {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="show" // Anima quando la lista entra nella vista
-                            viewport={{ once: true, amount: 0.2 }}
+                            viewport={{once: true, amount: 0.2}}
                         >
                             {categoryGroup.skills.map((skill) => (
                                 <motion.li
@@ -56,7 +56,8 @@ export default function SkillsSection() {
                                     variants={itemVariants}
                                 >
                                     <span className="text-4xl">{skill.icon}</span>
-                                    <span className="font-medium text-center text-gray-800 dark:text-gray-200">{skill.name}</span>
+                                    <span
+                                        className="font-medium text-center text-gray-800 dark:text-gray-200">{skill.name}</span>
                                 </motion.li>
                             ))}
                         </motion.ul>
