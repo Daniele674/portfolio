@@ -38,61 +38,84 @@ export const categorizedSkills = [
 export const allProjects = [
     {
         title: "Correlazione Eventi Honeypot e Pattern CAPEC",
+        filterCategory: "Cybersecurity",
         category: "Tesi Magistrale - Cybersecurity",
-        // NUOVO CAMPO ICONA:
-        icon: <FaShieldAlt/>,
-        description: "Sviluppo di un sistema ibrido per la correlazione di eventi di sicurezza da honeypot con i pattern di attacco noti (CAPEC), utilizzando NLP e LLM.",
-        image: "/projects/tesi-magistrale.png", // (lo lasciamo per la pagina dettaglio)
+        icon: <FaShieldAlt />,
+        image: "/projects/tesi-magistrale.png", // Aggiungi un'immagine in public/projects/
         tags: ["Python", "NLP", "LLM", "ChromaDB"],
         github: null,
         live: null,
-        link: "/projects/tesi-magistrale" // NUOVO CAMPO LINK
+        link: "/projects/tesi-magistrale",
+        detailedContent: () => (
+            <p>
+                Questo progetto di tesi magistrale si concentra sullo sviluppo di un sistema avanzato per analizzare e correlare automaticamente gli eventi di sicurezza raccolti da sistemi honeypot con i pattern di attacco standardizzati CAPEC (Common Attack Pattern Enumeration and Classification). L'obiettivo è trasformare dati grezzi in intelligence azionabile per anticipare le minacce, utilizzando tecniche di Natural Language Processing e Large Language Models per comprendere il contesto degli attacchi.
+            </p>
+        )
     },
     {
         title: "Piattaforma Blockchain per Log di Sicurezza",
+        filterCategory: "Cybersecurity",
         category: "Progetto Universitario - Blockchain",
-        icon: <FaCube/>,
-        description: "Piattaforma per la condivisione sicura e decentralizzata di log di sicurezza tra ISP, basata su Hyperledger Fabric e sviluppata in Go.",
-        image: "/projects/blockchain-isp.png",
+        icon: <FaCube />,
+        image: "/projects/blockchain-isp.png", // Aggiungi un'immagine in public/projects/
         tags: ["Hyperledger Fabric", "Go", "Docker", "API"],
-        github: "https://github.com/tuoutente/blockchain-repo",
+        github: "https://github.com/tuoutente/blockchain-repo", // Sostituisci con il link reale
         live: null,
-        link: "/projects/blockchain-isp"
+        link: "/projects/blockchain-isp",
+        detailedContent: () => (
+            <p>
+                Realizzazione di una piattaforma decentralizzata per la condivisione sicura e immutabile di log di attacchi informatici tra diversi Internet Service Provider (ISP). L'uso della tecnologia Hyperledger Fabric garantisce trasparenza e integrità dei dati, migliorando la collaborazione nella lotta contro le minacce informatiche. Il progetto include lo sviluppo di smart contract (chaincode) in Go e un'architettura basata su container Docker.
+            </p>
+        )
     },
     {
         title: "App MediCall - Assistente Medico Virtuale",
+        filterCategory: "App Mobile",
         category: "Progetto Universitario - Mobile App",
-        icon: <FiSmartphone/>,
-        description: "Assistente virtuale per la prenotazione di appuntamenti medici, realizzato con Flutter e un backend in Flask, con chatbot integrato.",
-        image: "/projects/medicall.png",
+        icon: <FiSmartphone />,
+        image: "/projects/medicall.png", // Aggiungi un'immagine in public/projects/
         tags: ["Flutter", "Python", "Flask", "LLM"],
-        github: "https://github.com/tuoutente/medicall-repo",
+        github: "https://github.com/tuoutente/medicall-repo", // Sostituisci con il link reale
         live: null,
-        link: "/projects/medicall"
+        link: "/projects/medicall",
+        detailedContent: () => (
+            <p>
+                Sviluppo di un'applicazione mobile cross-platform con Flutter che funge da assistente virtuale per la prenotazione di appuntamenti medici. Il backend, realizzato in Flask, gestisce le prenotazioni e si integra con un chatbot basato su LLM per un'interazione naturale con l'utente. Questo progetto ha partecipato all' "App Challenge" in collaborazione con Accenture.
+            </p>
+        )
     },
     {
         title: "Emotion GAIT - Analisi Emozioni dal Passo",
+        filterCategory: "Machine Learning",
         category: "Progetto Universitario - Machine Learning",
-        icon: <FaBrain/>,
-        description: "Studio ed implementazione di un modello per il riconoscimento delle emozioni umane dall'analisi della camminata, tramite Pose Estimation e KNN.",
-        image: "/projects/emotion-gait.png",
+        icon: <FaBrain />,
+        image: "/projects/emotion-gait.png", // Aggiungi un'immagine in public/projects/
         tags: ["Python", "Scikit-Learn", "Yolov7", "KNN"],
-        github: "https://github.com/tuoutente/emotion-gait-repo",
+        github: "https://github.com/tuoutente/emotion-gait-repo", // Sostituisci con il link reale
         live: null,
-        link: "/projects/emotion-gait"
+        link: "/projects/emotion-gait",
+        detailedContent: () => (
+            <p>
+                Progetto di ricerca e sviluppo focalizzato sul riconoscimento delle emozioni umane attraverso l'analisi della camminata (gait analysis). Utilizzando il modello di object detection Yolov7 per la stima della posa (Pose Estimation), sono state estratte feature posturali per addestrare un classificatore K-Nearest Neighbors (KNN) in grado di distinguere diversi stati emotivi.
+            </p>
+        )
     },
     {
         title: "Previsione Fitopatologie della Vite",
+        filterCategory: "Machine Learning",
         category: "Tesi Triennale - Deep Learning",
-        icon: <FaLeaf/>,
-        description: "Utilizzo di modelli di Deep Learning (CNN) e Transfer Learning per la previsione di fitopatologie nelle piante di vite da immagini fogliari.",
-        image: "/projects/precision-agriculture.png",
+        icon: <FaLeaf />,
+        image: "/projects/precision-agriculture.png", // Aggiungi un'immagine in public/projects/
         tags: ["TensorFlow", "Keras", "CNN", "Python"],
-        github: "https://github.com/tuoutente/precision-agriculture-repo",
+        github: "https://github.com/tuoutente/precision-agriculture-repo", // Sostituisci con il link reale
         live: null,
-        link: "/projects/precision-agriculture"
+        link: "/projects/precision-agriculture",
+        detailedContent: () => (
+            <p>
+                Questo progetto di tesi triennale esplora l'applicazione del Deep Learning per l'agricoltura di precisione. È stato sviluppato e addestrato un modello basato su Reti Neurali Convoluzionali (CNN), sfruttando tecniche di Transfer Learning da architetture note (es. MobileNetV2), per classificare e prevedere la presenza di malattie nelle piante di vite a partire da immagini delle foglie.
+            </p>
+        )
     },
 ];
 
-// Questo ora prenderà automaticamente i dati aggiornati
 export const featuredProjects = allProjects.slice(0, 3);
