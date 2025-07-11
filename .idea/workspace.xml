@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Add AboutPage component with personal timeline and skills overview">
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Add ProjectsGrid component and implement project filtering on ProjectsPage">
+      <change afterPath="$PROJECT_DIR$/public/projects/preview/MediCall.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProjectCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProjectsGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProjectsGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/portfolio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +48,19 @@
     </configuration>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Add ProjectsGrid component and implement project filtering on ProjectsPage">
+      <option name="closed" value="true" />
+      <created>1752190282397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752190282397</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add ProjectsGrid component and implement project filtering on ProjectsPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ProjectsGrid component and implement project filtering on ProjectsPage" />
   </component>
 </project>

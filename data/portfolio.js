@@ -43,7 +43,7 @@ export const allProjects = [
         icon: <FaShieldAlt />,
         image: "/projects/tesi-magistrale.png", // Aggiungi un'immagine in public/projects/
         tags: ["Python", "NLP", "LLM", "ChromaDB"],
-        github: null,
+        github: "https://github.com/Daniele674/downloadElastic",
         live: null,
         link: "/projects/tesi-magistrale",
         detailedContent: () => (
@@ -59,7 +59,7 @@ export const allProjects = [
         icon: <FaCube />,
         image: "/projects/blockchain-isp.png", // Aggiungi un'immagine in public/projects/
         tags: ["Hyperledger Fabric", "Go", "Docker", "API"],
-        github: "https://github.com/tuoutente/blockchain-repo", // Sostituisci con il link reale
+        github: "https://github.com/Daniele674/isp_security_logs", // Sostituisci con il link reale
         live: null,
         link: "/projects/blockchain-isp",
         detailedContent: () => (
@@ -75,7 +75,7 @@ export const allProjects = [
         icon: <FiSmartphone />,
         image: "/projects/medicall.png", // Aggiungi un'immagine in public/projects/
         tags: ["Flutter", "Python", "Flask", "LLM"],
-        github: "https://github.com/tuoutente/medicall-repo", // Sostituisci con il link reale
+        github: "https://github.com/dany-el92/MediCall", // Sostituisci con il link reale
         live: null,
         link: "/projects/medicall",
         detailedContent: () => (
@@ -91,7 +91,7 @@ export const allProjects = [
         icon: <FaBrain />,
         image: "/projects/emotion-gait.png", // Aggiungi un'immagine in public/projects/
         tags: ["Python", "Scikit-Learn", "Yolov7", "KNN"],
-        github: "https://github.com/tuoutente/emotion-gait-repo", // Sostituisci con il link reale
+        github: "https://github.com/Daniele674/Emotion-GAIT-Knn-Dynamic-Time-Warping", // Sostituisci con il link reale
         live: null,
         link: "/projects/emotion-gait",
         detailedContent: () => (
@@ -107,7 +107,7 @@ export const allProjects = [
         icon: <FaLeaf />,
         image: "/projects/precision-agriculture.png", // Aggiungi un'immagine in public/projects/
         tags: ["TensorFlow", "Keras", "CNN", "Python"],
-        github: "https://github.com/tuoutente/precision-agriculture-repo", // Sostituisci con il link reale
+        github: "https://github.com/Daniele674/Precision-Agriculture-and-Artificial-Intelligence-for-the-Prevention-of-Grapevine-Diseases", // Sostituisci con il link reale
         live: null,
         link: "/projects/precision-agriculture",
         detailedContent: () => (
