@@ -2,49 +2,40 @@
 
 "use server";
 
-import {Resend} from "resend";
-import {ContactFormEmail} from "@/components/emails/ContactFormEmail";
-import {z} from "zod";
+import { Resend } from 'resend';
+import { ContactFormEmail } from '@/components/emails/ContactFormEmail';
+import { z } from 'zod';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Schema con error map unificata e nuove funzioni di validazione
 const contactFormSchema = z.object({
-    name: z.string().min(2, {error: "Il nome è troppo corto"}),
-    email: z.email({error: "L'email non è valida"}),
-    message: z.string().min(5, {error: "Il messaggio è troppo corto"}),
+    name: z.string().min(2, "Il nome deve contenere almeno 2 caratteri."),
+    email: z.email("L'indirizzo email non è valido."),
+    message: z.string().min(5, "Il messaggio deve contenere almeno 5 caratteri."),
 });
 
-export async function sendEmail(prevState, formData) {
-    const safe = contactFormSchema.safeParse({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-    });
+// La action ora accetta un singolo oggetto 'data'
+export async function sendEmail(data) {
+    const validatedFields = contactFormSchema.safeParse(data);
 
-    if (!safe.success) {
-        // Usa la nuova funzione per creare un oggetto errori strutturato
-        const tree = z.treeifyError(safe.error);
-        return {
-            error: tree,
-        };
+    if (!validatedFields.success) {
+        // Restituisce l'oggetto con gli errori di validazione
+        return { error: validatedFields.error.flatten().fieldErrors };
     }
 
-    const {name, email, message} = safe.data;
+    const { name, email, message } = validatedFields.data;
 
     try {
         await resend.emails.send({
-            from: "Portfolio Contact Form <onboarding@resend.dev>",
-            to: "d.gregori.work@gmail.com",
+            from: 'Portfolio Contact Form <onboarding@resend.dev>', // Indirizzo di test di Resend
+            to: 'd.gregori.work@gmail.com', // <-- EMAIL DOVE RICEVERAI I MESSAGGI
             subject: `Nuovo messaggio da ${name} dal tuo portfolio!`,
-            reply_to: email,
-            react: <ContactFormEmail name={name} email={email} message={message}/>,
+            reply_to: email, // Permette di rispondere direttamente all'utente
+            react: <ContactFormEmail name={name} email={email} message={message} />,
         });
-        return {success: "Messaggio inviato con successo!"};
-    } catch (err) {
-        console.error("Email sending error:", err);
-        return {
-            error: "Si è verificato un errore durante l'invio. Riprova più tardi.",
-        };
+        return { success: "Messaggio inviato con successo!" };
+    } catch (error) {
+        console.error('Email sending error:', error);
+        return { error: "Si è verificato un errore durante l'invio. Riprova più tardi." };
     }
 }

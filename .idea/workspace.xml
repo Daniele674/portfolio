@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Add image configuration to next.config.mjs, update package dependencies, and enhance ProjectsGrid component with link previews">
-      <change afterPath="$PROJECT_DIR$/actions/sendEmail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/emails/ContactFormEmail.jsx" afterDir="false" />
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Add contact form functionality with email sending and validation; update package dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/sendEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/sendEmail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/emails/ContactFormEmail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/emails/ContactFormEmail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -108,9 +108,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752252165388</updated>
-      <workItem from="1752252169784" duration="6491000" />
+      <workItem from="1752252169784" duration="10814000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add contact form functionality with email sending and validation; update package dependencies">
+      <option name="closed" value="true" />
+      <created>1752259398554</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752259398554</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +138,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add ProjectsGrid component and implement project filtering on ProjectsPage" />
     <MESSAGE value="Add image configuration to next.config.mjs, update package dependencies, and enhance ProjectsGrid component with link previews" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add image configuration to next.config.mjs, update package dependencies, and enhance ProjectsGrid component with link previews" />
+    <MESSAGE value="Add contact form functionality with email sending and validation; update package dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add contact form functionality with email sending and validation; update package dependencies" />
   </component>
 </project>
