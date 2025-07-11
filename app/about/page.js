@@ -4,36 +4,38 @@
 
 import { motion } from 'framer-motion';
 import { Timeline } from '@/components/ui/timeline';
+import { Meteors } from '@/components/ui/meteors'; // Import del nuovo componente
 
-// Import delle icone necessarie
+// Import delle icone necessarie per la pagina
 import {
     FaShieldAlt,
     FaBug,
-    FaNetworkWired,
+    FaCodeBranch,
     FaGraduationCap,
     FaPaintBrush,
     FaRocket,
     FaUsers,
     FaLightbulb,
-    FaBrain
+    FaComments,
+    FaCode, FaBrain
 } from 'react-icons/fa';
 
-// --- DATI PER LA NUOVA SEZIONE "FOCUS OPERATIVO" ---
-const cybersecurityFocusData = [
-    {
-        icon: <FaBug />,
-        title: "Penetration Testing & Vulnerability Assessment",
-        description: "La mia area di maggiore interesse. Analizzo metodicamente le applicazioni web e le infrastrutture di rete per identificare, classificare e sfruttare le vulnerabilità prima che possano farlo gli attaccanti."
-    },
+// --- DATI PER LA SEZIONE "FOCUS: CYBERSECURITY" ---
+const cybersecurityPillars = [
     {
         icon: <FaShieldAlt />,
-        title: "Secure Development & Code Review",
-        description: "Credo che la sicurezza nasca dal codice. Analizzo il codice sorgente per scovare le falle logiche e applico i principi di programmazione sicura per prevenire le vulnerabilità più comuni (es. OWASP Top 10)."
+        title: "Difesa Proattiva & Architetture Sicure",
+        description: "Progetto e costruisco sistemi pensando alla sicurezza fin dal primo giorno. Il mio obiettivo è creare infrastrutture che non solo reagiscano, ma anticipino le minacce."
     },
     {
-        icon: <FaNetworkWired />,
-        title: "Analisi di Rete e Digital Forensics",
-        description: "Esamino il traffico di rete e analizzo i sistemi post-incidente per ricostruire le attività, identificare i vettori di attacco e raccogliere prove digitali in modo metodico e documentato."
+        icon: <FaBug />,
+        title: "Vulnerability Analysis & Ethical Hacking",
+        description: "Mi metto nei panni di un attaccante per trovare le falle prima che lo faccia qualcun altro. Analizzo, testo e scopro le vulnerabilità per rendere i sistemi più robusti."
+    },
+    {
+        icon: <FaCodeBranch />,
+        title: "Sviluppo Sicuro (DevSecOps)",
+        description: "Integro pratiche e strumenti di sicurezza direttamente nel ciclo di sviluppo del software, automatizzando i controlli per un rilascio continuo e affidabile."
     }
 ];
 
@@ -62,8 +64,8 @@ const timelineData = [
     }
 ];
 
-// --- DATI PER LA NUOVA SEZIONE "ARSENALE & MENTALITÀ" ---
-const securityToolStack = [
+// --- DATI PER LE COMPETENZE A 360° ---
+const techStack = [
     { name: "Scansione e Analisi", tools: "Nessus, GVM, OWASP ZAP, Wireshark, Burp Suite" },
     { name: "Sistemi e Container", tools: "Linux (Kali, Ubuntu), Docker, Docker Compose" },
     { name: "Sviluppo e Scripting", tools: "Python (Flask, Scapy), Go, Bash" },
@@ -111,32 +113,39 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            {/* SEZIONE 1: IL MIO FOCUS OPERATIVO */}
+            {/* SEZIONE 1: IL MIO FOCUS: CYBERSECURITY con METEORE */}
             <section className="w-full py-16 md:py-24">
                 <div className="max-w-5xl mx-auto px-4 text-center">
                     <motion.h1
                         className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight"
                         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                     >
-                        Focus Operativo: Offensive Security
+                        Il Mio Focus: Cybersecurity
                     </motion.h1>
                     <motion.p
                         className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-16"
                         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                        La mia specializzazione si concentra sulla sicurezza offensiva: l'arte di trovare le debolezze per costruire difese più forti.
+                        La mia passione è costruire e proteggere. Qui ci sono i tre pilastri su cui fondo il mio approccio alla sicurezza digitale.
                     </motion.p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {cybersecurityFocusData.map((item, index) => (
+                        {cybersecurityPillars.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white dark:bg-gray-800/50 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700/50 text-center"
-                                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="relative overflow-hidden bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 text-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.5 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <div className="text-4xl text-blue-500 dark:text-blue-400 mb-4 inline-block">{item.icon}</div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                                <Meteors number={15} />
+                                <div className="relative z-10">
+                                    <div className="text-4xl text-blue-500 dark:text-blue-400 mb-4 inline-block">
+                                        {item.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{item.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
@@ -169,7 +178,7 @@ export default function AboutPage() {
                         <div className="lg:col-span-2">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Arsenale Tecnico</h3>
                             <div className="space-y-4">
-                                {securityToolStack.map(item => (
+                                {techStack.map(item => (
                                     <div key={item.name}>
                                         <p className="font-semibold text-blue-600 dark:text-blue-400">{item.name}</p>
                                         <p className="text-gray-600 dark:text-gray-400">{item.tools}</p>
