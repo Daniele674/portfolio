@@ -5,37 +5,39 @@
 import { motion } from 'framer-motion';
 import { Timeline } from '@/components/ui/timeline';
 
-// Import delle icone
+// Import delle icone necessarie
 import {
-    FaCode,
     FaShieldAlt,
-    FaUserFriends,
+    FaBug,
+    FaNetworkWired,
     FaGraduationCap,
     FaPaintBrush,
     FaRocket,
-    FaBrain // Aggiunta per la nuova card
+    FaUsers,
+    FaLightbulb,
+    FaBrain
 } from 'react-icons/fa';
 
-// --- NUOVI DATI PER LE CARD "FILOSOFIA CYBERSECURITY" ---
-const cybersecurityPhilosophyData = [
+// --- DATI PER LA NUOVA SEZIONE "FOCUS OPERATIVO" ---
+const cybersecurityFocusData = [
+    {
+        icon: <FaBug />,
+        title: "Penetration Testing & Vulnerability Assessment",
+        description: "La mia area di maggiore interesse. Analizzo metodicamente le applicazioni web e le infrastrutture di rete per identificare, classificare e sfruttare le vulnerabilità prima che possano farlo gli attaccanti."
+    },
     {
         icon: <FaShieldAlt />,
-        title: "Difesa Proattiva",
-        description: "Non mi limito a reagire alle minacce. Il mio approccio si basa sulla previsione e la modellazione dei rischi (threat modeling) per costruire sistemi resilienti fin dal principio."
+        title: "Secure Development & Code Review",
+        description: "Credo che la sicurezza nasca dal codice. Analizzo il codice sorgente per scovare le falle logiche e applico i principi di programmazione sicura per prevenire le vulnerabilità più comuni (es. OWASP Top 10)."
     },
     {
-        icon: <FaCode />,
-        title: "Sicurezza Integrata (Shift-Left)",
-        description: "La sicurezza non è l'ultimo step, ma una responsabilità condivisa in tutto il ciclo di vita del software. Promuovo pratiche DevSecOps per scrivere codice intrinsecamente sicuro."
-    },
-    {
-        icon: <FaBrain />,
-        title: "Mentalità Etica e Miglioramento Continuo",
-        description: "Il panorama delle minacce si evolve ogni giorno. Studio costantemente nuove vulnerabilità e tecniche di attacco per rimanere un passo avanti e garantire che le difese siano sempre aggiornate."
+        icon: <FaNetworkWired />,
+        title: "Analisi di Rete e Digital Forensics",
+        description: "Esamino il traffico di rete e analizzo i sistemi post-incidente per ricostruire le attività, identificare i vettori di attacco e raccogliere prove digitali in modo metodico e documentato."
     }
 ];
 
-// --- DATI ESISTENTI (Invariati) ---
+// --- DATI PER LA TIMELINE ---
 const timelineData = [
     {
         date: "2023 - Presente",
@@ -60,12 +62,31 @@ const timelineData = [
     }
 ];
 
-const skillsData = {
-    "Cybersecurity": ["Penetration Testing", "Ethical Hacking", "Secure Programming", "Vulnerability Scanning", "Digital Forensics"],
-    "Linguaggi di Programmazione": ["Python (Flask, ML)", "Java (Android, EE)", "C/C++", "Dart (Flutter)", "SQL"],
-    "Framework & Librerie": ["Flutter", "Flask", "Unity (3D)", "React & Next.js"],
-    "Development & Tools": ["Git & GitHub", "Docker", "Linux OS", "IDEs (IntelliJ, VS Code)"]
-};
+// --- DATI PER LA NUOVA SEZIONE "ARSENALE & MENTALITÀ" ---
+const securityToolStack = [
+    { name: "Scansione e Analisi", tools: "Nessus, GVM, OWASP ZAP, Wireshark, Burp Suite" },
+    { name: "Sistemi e Container", tools: "Linux (Kali, Ubuntu), Docker, Docker Compose" },
+    { name: "Sviluppo e Scripting", tools: "Python (Flask, Scapy), Go, Bash" },
+    { name: "Database", tools: "MySQL, MongoDB, SQL Injection Techniques" }
+];
+
+const cybersecuritySoftSkills = [
+    {
+        icon: <FaLightbulb />,
+        title: "Mentalità Analitica da Attaccante",
+        description: "Affronto i problemi di sicurezza pensando 'come potrei rompere questo sistema?'. Questo approccio 'offensive' è fondamentale per costruire difese veramente efficaci."
+    },
+    {
+        icon: <FaUsers />,
+        title: "Reportistica Tecnica e Collaborazione",
+        description: "So documentare le vulnerabilità scoperte in report chiari e azionabili, comunicando l'impatto tecnico e il rischio di business a sviluppatori e manager."
+    },
+    {
+        icon: <FaBrain />,
+        title: "Apprendimento Continuo e Ricerca",
+        description: "La cybersecurity è una gara costante. Dedico tempo allo studio di nuove tecniche di attacco, paper di ricerca e CVE per rimanere sempre un passo avanti."
+    }
+];
 
 
 // --- COMPONENTE PAGINA ---
@@ -90,38 +111,30 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            {/* SEZIONE 1: IL MIO APPROCCIO ALLA CYBERSECURITY */}
+            {/* SEZIONE 1: IL MIO FOCUS OPERATIVO */}
             <section className="w-full py-16 md:py-24">
                 <div className="max-w-5xl mx-auto px-4 text-center">
                     <motion.h1
                         className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                     >
-                        Il Mio Approccio alla Cybersecurity
+                        Focus Operativo: Offensive Security
                     </motion.h1>
                     <motion.p
                         className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-16"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                        La sicurezza non è un prodotto, ma un processo. Questi sono i principi che guidano il mio lavoro per proteggere le infrastrutture digitali.
+                        La mia specializzazione si concentra sulla sicurezza offensiva: l'arte di trovare le debolezze per costruire difese più forti.
                     </motion.p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {cybersecurityPhilosophyData.map((item, index) => (
+                        {cybersecurityFocusData.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-white dark:bg-gray-800/50 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-left"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="bg-white dark:bg-gray-800/50 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700/50 text-center"
+                                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <div className="text-3xl text-blue-500 dark:text-blue-400 mb-4">
-                                    {item.icon}
-                                </div>
+                                <div className="text-4xl text-blue-500 dark:text-blue-400 mb-4 inline-block">{item.icon}</div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{item.title}</h3>
                                 <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                             </motion.div>
@@ -130,48 +143,55 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* SEZIONE 2: IL MIO PERCORSO (Invariata) */}
+            {/* SEZIONE 2: IL MIO PERCORSO FORMATIVO */}
             <section className="w-full py-16 md:py-24 bg-gray-50 dark:bg-gray-900/70">
                 <div className="max-w-5xl mx-auto px-4">
-                    <div className="mb-12">
+                    <div className="mb-12 text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                            Il Mio Percorso
+                            Il Percorso per la Specializzazione
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400">
-                            Le tappe fondamentali della mia crescita professionale e accademica.
+                            Le tappe accademiche che hanno costruito le mie fondamenta tecniche.
                         </p>
                     </div>
                     <Timeline data={aceternityTimelineData} />
                 </div>
             </section>
 
-            {/* SEZIONE 3: COMPETENZE TECNICHE (Invariata) */}
+            {/* SEZIONE 3: ARSENALE E MENTALITÀ */}
             <section className="w-full py-16 md:py-24">
                 <div className="max-w-5xl mx-auto px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-gray-100">
-                        Competenze Tecniche
+                        Il Mio Arsenale e Approccio
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {Object.entries(skillsData).map(([category, skills], index) => (
-                            <motion.div
-                                key={category}
-                                className="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                            >
-                                <h3 className="text-xl font-bold mb-5 text-blue-500 dark:text-blue-400">{category}</h3>
-                                <ul className="space-y-3">
-                                    {skills.map(skill => (
-                                        <li key={skill} className="flex items-center gap-3">
-                                            <FaCode className="text-gray-400 dark:text-gray-500 flex-shrink-0" />
-                                            <span className="text-base text-gray-700 dark:text-gray-300">{skill}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        ))}
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                        {/* Colonna Sinistra: Toolkit Tecnico */}
+                        <div className="lg:col-span-2">
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Arsenale Tecnico</h3>
+                            <div className="space-y-4">
+                                {securityToolStack.map(item => (
+                                    <div key={item.name}>
+                                        <p className="font-semibold text-blue-600 dark:text-blue-400">{item.name}</p>
+                                        <p className="text-gray-600 dark:text-gray-400">{item.tools}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Colonna Destra: Soft Skills */}
+                        <div className="lg:col-span-3">
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Mentalità e Soft Skills</h3>
+                            <div className="space-y-6">
+                                {cybersecuritySoftSkills.map(skill => (
+                                    <div key={skill.title} className="flex gap-4 items-start">
+                                        <div className="text-2xl text-blue-500 dark:text-blue-400 pt-1">{skill.icon}</div>
+                                        <div>
+                                            <h4 className="font-bold text-lg text-gray-900 dark:text-gray-100">{skill.title}</h4>
+                                            <p className="text-gray-600 dark:text-gray-400">{skill.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

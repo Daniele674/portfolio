@@ -34,7 +34,7 @@ export default function CombinedIntroSection() {
                 >
                     <ProfileCard
                         name="Daniele Gregori"
-                        title="Cybersecurity Analist"
+                        title="Penetration Tester"
                         handle="daniele_gregori"
                         status="Aperto a collaborazioni"
                         contactText="Contattami →"
