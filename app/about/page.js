@@ -4,9 +4,10 @@
 
 import { motion } from 'framer-motion';
 import { Timeline } from '@/components/ui/timeline';
-import { Meteors } from '@/components/ui/meteors'; // Import del nuovo componente
+import { Meteors } from '@/components/ui/meteors';
+import { LampContainer } from '@/components/ui/lamp';
 
-// Import delle icone necessarie per la pagina
+// Import delle icone necessarie
 import {
     FaShieldAlt,
     FaBug,
@@ -20,7 +21,7 @@ import {
     FaCode, FaBrain
 } from 'react-icons/fa';
 
-// --- DATI PER LA SEZIONE "FOCUS: CYBERSECURITY" ---
+// --- DATI (Invariati) ---
 const cybersecurityPillars = [
     {
         icon: <FaShieldAlt />,
@@ -38,8 +39,6 @@ const cybersecurityPillars = [
         description: "Integro pratiche e strumenti di sicurezza direttamente nel ciclo di sviluppo del software, automatizzando i controlli per un rilascio continuo e affidabile."
     }
 ];
-
-// --- DATI PER LA TIMELINE ---
 const timelineData = [
     {
         date: "2023 - Presente",
@@ -63,15 +62,12 @@ const timelineData = [
         description: "Competenze avanzate in Inglese, Francese e Spagnolo."
     }
 ];
-
-// --- DATI PER LE COMPETENZE A 360° ---
 const techStack = [
     { name: "Scansione e Analisi", tools: "Nessus, GVM, OWASP ZAP, Wireshark, Burp Suite" },
     { name: "Sistemi e Container", tools: "Linux (Kali, Ubuntu), Docker, Docker Compose" },
     { name: "Sviluppo e Scripting", tools: "Python (Flask, Scapy), Go, Bash" },
     { name: "Database", tools: "MySQL, MongoDB, SQL Injection Techniques" }
 ];
-
 const cybersecuritySoftSkills = [
     {
         icon: <FaLightbulb />,
@@ -113,47 +109,60 @@ export default function AboutPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            {/* SEZIONE 1: IL MIO FOCUS: CYBERSECURITY con METEORE */}
-            <section className="w-full py-16 md:py-24">
-                <div className="max-w-5xl mx-auto px-4 text-center">
-                    <motion.h1
-                        className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 tracking-tight"
-                        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            {/* SEZIONE 1: INTRODUZIONE CON LAMPADA E CARD */}
+            <section className="w-full">
+                <LampContainer>
+                    <motion.div
+                        initial={{ opacity: 0.5, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                        }}
+                        className="text-center"
                     >
-                        Il Mio Focus: Cybersecurity
-                    </motion.h1>
-                    <motion.p
-                        className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-16"
-                        initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        La mia passione è costruire e proteggere. Qui ci sono i tre pilastri su cui fondo il mio approccio alla sicurezza digitale.
-                    </motion.p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {cybersecurityPillars.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                className="relative overflow-hidden bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800 text-center"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.5 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                            >
-                                <Meteors number={15} />
-                                <div className="relative z-10">
-                                    <div className="text-4xl text-blue-500 dark:text-blue-400 mb-4 inline-block">
-                                        {item.icon}
+                        <h1 className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-4xl font-medium tracking-tight text-transparent md:text-7xl">
+                            Il Mio Focus: Cybersecurity
+                        </h1>
+                        <p className="mt-4 text-lg font-normal text-slate-400 max-w-2xl mx-auto">
+                            La mia passione è costruire e proteggere. Qui ci sono i tre pilastri su cui fondo il mio approccio alla sicurezza digitale.
+                        </p>
+                    </motion.div>
+                </LampContainer>
+
+                {/* --- ECCO LE MODIFICHE PRINCIPALI --- */}
+                {/* 1. Il margine negativo è aumentato da -mt-48 a -mt-64 per tirare su di più le card */}
+                <div className="bg-slate-950 -mt-64 pb-24 px-4">
+                    <div className="max-w-5xl mx-auto">
+                        {/* 2. Il padding superiore è ridotto da pt-12 a pt-4 per avvicinare le card al testo */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+                            {cybersecurityPillars.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="relative overflow-hidden bg-gray-900 p-8 rounded-2xl shadow-2xl border border-gray-800 text-center"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
+                                >
+                                    <Meteors number={15} />
+                                    <div className="relative z-10">
+                                        <div className="text-4xl text-blue-400 mb-4 inline-block">
+                                            {item.icon}
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-100 mb-2">{item.title}</h3>
+                                        <p className="text-gray-400">{item.description}</p>
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{item.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* SEZIONE 2: IL MIO PERCORSO FORMATIVO */}
-            <section className="w-full py-16 md:py-24 bg-gray-50 dark:bg-gray-900/70">
+            <section className="w-full py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
                 <div className="max-w-5xl mx-auto px-4">
                     <div className="mb-12 text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">
@@ -174,7 +183,6 @@ export default function AboutPage() {
                         Il Mio Arsenale e Approccio
                     </h2>
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-                        {/* Colonna Sinistra: Toolkit Tecnico */}
                         <div className="lg:col-span-2">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Arsenale Tecnico</h3>
                             <div className="space-y-4">
@@ -186,7 +194,6 @@ export default function AboutPage() {
                                 ))}
                             </div>
                         </div>
-                        {/* Colonna Destra: Soft Skills */}
                         <div className="lg:col-span-3">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Mentalità e Soft Skills</h3>
                             <div className="space-y-6">
