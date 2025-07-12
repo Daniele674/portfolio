@@ -1,23 +1,40 @@
 @import "tailwindcss";
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+/* 1. Override del variant `dark` per usare la classe .dark su <html> */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* 2. Definizione di animazioni personalizzate all’interno di @theme inline */
 @theme inline {
     --animate-meteor-effect: meteor 5s linear infinite;
-
     @keyframes meteor {
-        0% {
-            transform: rotate(215deg) translateX(0);
-            opacity: 1;
-        }
-        70% {
-            opacity: 1;
-        }
-        100% {
-            transform: rotate(215deg) translateX(-500px);
-            opacity: 0;
-        }
+        0%   { transform: rotate(215deg) translateX(0);   opacity: 1; }
+        70%  { opacity: 1; }
+        100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+    }
+}
+
+/* 3. Theme variables per light mode (e dark se non sovrascritto) */
+@theme {
+    --color-background: hsl(0 0% 98%); /* luce */
+    --color-text: hsl(0 0% 10%);
+}
+
+/* 4. Override delle variabili nel layer theme per dark mode */
+@layer theme {
+    .dark {
+        --color-background: hsl(0 0% 10%); /* versione scura */
+        --color-text:       hsl(0 0% 90%);
+        --animate-meteor-effect: meteor-dark 5s linear infinite;
+    }
+
+    @keyframes meteor-dark {
+        0%   { transform: rotate(215deg) translateX(0);   opacity: 1; }
+        70%  { opacity: 1; }
+        100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+    }
+
+    /* 5. Font per il body */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
     }
 }
