@@ -2,16 +2,13 @@
 
 "use client";
 
-import React, {useEffect, useId, useRef, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
-import {useOutsideClick} from "@/hooks/use-outside-click";
-import Link from 'next/link';
+import React, { useEffect, useId, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useOutsideClick } from "@/hooks/use-outside-click";
+import { LinkPreview } from "@/components/ui/link-preview";
 
-// 1. RE-IMPORTIAMO LINKPREVIEW
-import {LinkPreview} from "@/components/ui/link-preview";
-
-// Componente interno per il contenuto della card (per pulizia del codice)
-const CardContent = ({project}) => (
+// Componente interno per il contenuto della card
+const CardContent = ({ project }) => (
     <div className="flex flex-col h-full">
         <div
             className="relative w-full h-48 rounded-t-lg bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center overflow-hidden">
@@ -38,9 +35,18 @@ const CardContent = ({project}) => (
     </div>
 );
 
+// Il componente ora accetta la prop `initialActiveProjectTitle`
+export default function ProjectsGrid({ projects = [], initialActiveProjectTitle = null }) {
 
-export default function ProjectsGrid({projects = []}) {
-    const [active, setActive] = useState(null);
+    // Funzione per trovare il progetto iniziale basandosi sul titolo ricevuto dall'URL
+    const findInitialProject = () => {
+        if (!initialActiveProjectTitle) return null;
+        return projects.find(p => p.title === initialActiveProjectTitle) || null;
+    };
+
+    // Lo stato `active` viene inizializzato con il risultato della funzione
+    const [active, setActive] = useState(findInitialProject);
+
     const id = useId();
     const ref = useRef(null);
 
@@ -50,12 +56,8 @@ export default function ProjectsGrid({projects = []}) {
                 setActive(null);
             }
         }
-
-        if (active) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        if (active) { document.body.style.overflow = "hidden"; }
+        else { document.body.style.overflow = "auto"; }
         window.addEventListener("keydown", onKeyDown);
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [active]);
@@ -67,19 +69,19 @@ export default function ProjectsGrid({projects = []}) {
             <AnimatePresence>
                 {active && (
                     <motion.div
-                        initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm h-full w-full z-40"/>
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm h-full w-full z-40" />
                 )}
             </AnimatePresence>
             <AnimatePresence>
                 {active ? (
                     <div className="fixed inset-0 grid place-items-center z-50 p-4">
                         <motion.button
-                            key={`button-${active.title}-${id}`} layout initial={{opacity: 0}} animate={{opacity: 1}}
-                            exit={{opacity: 0, transition: {duration: 0.05}}}
+                            key={`button-${active.title}-${id}`} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                            exit={{ opacity: 0, transition: { duration: 0.05 } }}
                             className="flex absolute top-4 right-4 items-center justify-center bg-white rounded-full h-8 w-8 z-50"
                             onClick={() => setActive(null)}>
-                            <CloseIcon/>
+                            <CloseIcon />
                         </motion.button>
                         <motion.div
                             layoutId={`card-${active.title}-${id}`} ref={ref}
@@ -103,7 +105,6 @@ export default function ProjectsGrid({projects = []}) {
                             </div>
                             <div className="p-6 pt-2 mt-auto border-t border-gray-200 dark:border-gray-700/50">
                                 {active.github && (
-                                    // 2. REINTEGRIAMO LINKPREVIEW CON isStatic={false}
                                     <LinkPreview
                                         url={active.github}
                                         isStatic={false}
@@ -120,15 +121,12 @@ export default function ProjectsGrid({projects = []}) {
 
             <motion.ul layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project) => (
-                    // 3. AGGIUNGIAMO IL BORDO GRADIENTE ALLA CARD NELLA GRIGLIA
                     <motion.li
                         layoutId={`card-${project.title}-${id}`} key={project.title} onClick={() => setActive(project)}
-                        // Il `li` diventa il contenitore del gradiente
                         className="p-[1px] bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-800 dark:via-neutral-800/50 dark:to-neutral-800 rounded-2xl cursor-pointer hover:bg-gradient-to-br hover:from-blue-400 hover:to-purple-400 transition-all duration-300"
                     >
-                        {/* Il `div` interno ha il colore di sfondo solido, creando l'effetto bordo */}
                         <div className="bg-white dark:bg-gray-800 rounded-[15px] h-full w-full">
-                            <CardContent project={project}/>
+                            <CardContent project={project} />
                         </div>
                     </motion.li>
                 ))}
@@ -139,13 +137,13 @@ export default function ProjectsGrid({projects = []}) {
 
 export const CloseIcon = () => (
     <motion.svg
-        initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transition: {duration: 0.05}}}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.05 } }}
         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24"
         fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
         className="h-5 w-5 text-black"
     >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M18 6l-12 12"/>
-        <path d="M6 6l12 12"/>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M18 6l-12 12" />
+        <path d="M6 6l12 12" />
     </motion.svg>
 );

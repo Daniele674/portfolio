@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information">
-      <change afterPath="$PROJECT_DIR$/public/CV-Daniele-Gregori.pdf" afterDir="false" />
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CombinedIntroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CombinedIntroSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/projects/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FeaturedProjects.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedProjects.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProjectsGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProjectsGrid.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,7 @@
       <updated>1752252165388</updated>
       <workItem from="1752252169784" duration="20705000" />
       <workItem from="1752335647095" duration="385000" />
-      <workItem from="1752341322941" duration="2322000" />
+      <workItem from="1752341322941" duration="3860000" />
     </task>
     <task id="LOCAL-00003" summary="Add contact form functionality with email sending and validation; update package dependencies">
       <option name="closed" value="true" />
@@ -171,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752280582834</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links">
+      <option name="closed" value="true" />
+      <created>1752344077406</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752344077406</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +202,7 @@
     <MESSAGE value="Add meteor animation component and update page.js to enhance cybersecurity focus section" />
     <MESSAGE value="Add LampContainer component and update page.js to enhance cybersecurity section layout and visuals" />
     <MESSAGE value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
+    <MESSAGE value="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links" />
   </component>
 </project>

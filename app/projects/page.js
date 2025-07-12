@@ -6,11 +6,16 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { allProjects } from '@/data/portfolio';
 import ProjectsGrid from '@/components/ProjectsGrid';
+import { useSearchParams } from 'next/navigation';
 
 const filterCategories = ["Tutti", "Cybersecurity", "Machine Learning", "App Mobile"];
 
 export default function ProjectsPage() {
     const [activeFilter, setActiveFilter] = useState("Tutti");
+
+    // Legge il parametro "open" dall'URL
+    const searchParams = useSearchParams();
+    const projectToOpen = searchParams.get('open');
 
     const filteredProjects = activeFilter === "Tutti"
         ? allProjects
@@ -49,7 +54,11 @@ export default function ProjectsPage() {
                         ))}
                     </div>
 
-                    <ProjectsGrid projects={filteredProjects} />
+                    {/* Passa il progetto da aprire come prop a ProjectsGrid */}
+                    <ProjectsGrid
+                        projects={filteredProjects}
+                        initialActiveProjectTitle={projectToOpen}
+                    />
 
                 </div>
             </section>
