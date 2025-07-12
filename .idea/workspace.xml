@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Add meteor animation component and update page.js to enhance cybersecurity focus section">
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/about/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CombinedIntroSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CombinedIntroSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/portfolio.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,9 @@
     "accountId": "d0abe313-e3e7-4db2-b97c-5f50118a6c95"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -104,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752252165388</updated>
-      <workItem from="1752252169784" duration="17681000" />
+      <workItem from="1752252169784" duration="20650000" />
     </task>
     <task id="LOCAL-00003" summary="Add contact form functionality with email sending and validation; update package dependencies">
       <option name="closed" value="true" />
@@ -138,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752270748987</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add LampContainer component and update page.js to enhance cybersecurity section layout and visuals">
+      <option name="closed" value="true" />
+      <created>1752277626792</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752277626792</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +175,8 @@
     <MESSAGE value="Add contact form functionality with email validation and enhance email template; update package dependencies" />
     <MESSAGE value="Update CombinedIntroSection and page.js to reflect new focus on Offensive Security; enhance content and structure" />
     <MESSAGE value="Add meteor animation component and update page.js to enhance cybersecurity focus section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add meteor animation component and update page.js to enhance cybersecurity focus section" />
+    <MESSAGE value="Add LampContainer component and update page.js to enhance cybersecurity section layout and visuals" />
+    <MESSAGE value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
   </component>
 </project>
