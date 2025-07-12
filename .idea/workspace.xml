@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links">
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/projects/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FeaturedProjects.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FeaturedProjects.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ProjectsGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProjectsGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/projects/preview/MediCall.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
   "keyToString": {
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/danie/OneDrive/Desktop/Progetti Intellij/portfolio/public",
+    "last_opened_file_path": "C:/Users/danie/OneDrive/Desktop/Progetti Intellij/portfolio/app",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -67,7 +66,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\OneDrive\Desktop\Progetti Intellij\portfolio\app" />
       <recent name="C:\Users\danie\OneDrive\Desktop\Progetti Intellij\portfolio\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\OneDrive\Desktop\Progetti Intellij\portfolio\app" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -118,7 +121,7 @@
       <updated>1752252165388</updated>
       <workItem from="1752252169784" duration="20705000" />
       <workItem from="1752335647095" duration="385000" />
-      <workItem from="1752341322941" duration="3860000" />
+      <workItem from="1752341322941" duration="5710000" />
     </task>
     <task id="LOCAL-00003" summary="Add contact form functionality with email sending and validation; update package dependencies">
       <option name="closed" value="true" />
@@ -176,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752344077406</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL">
+      <option name="closed" value="true" />
+      <created>1752345523997</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1752345523997</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +214,7 @@
     <MESSAGE value="Add LampContainer component and update page.js to enhance cybersecurity section layout and visuals" />
     <MESSAGE value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
     <MESSAGE value="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links" />
+    <MESSAGE value="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL" />
   </component>
 </project>

@@ -6,8 +6,8 @@ import Header from '@/components/Header'
 import Footer from "@/components/Footer";
 
 export const metadata = {
-    title: 'Portfolio | Daniele Gregori',
-    description: 'Sviluppatore web full-stack specializzato in React e Next.js.',
+    title: 'Daniele Gregori | Portfolio',
+    description: 'Cybersecurity Specialist.',
 }
 
 export default function RootLayout({children}) {
