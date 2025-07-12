@@ -2,7 +2,6 @@
 import CombinedIntroSection from '@/components/CombinedIntroSection'; // -> NUOVO IMPORT
 import SkillsSection from '@/components/SkillsSection';
 import FeaturedProjects from '@/components/FeaturedProjects';
-import Footer from '@/components/Footer';
 
 export default function HomePage() {
     return (
@@ -10,7 +9,6 @@ export default function HomePage() {
             <CombinedIntroSection/>
             <SkillsSection/>
             <FeaturedProjects/>
-            <Footer/>
         </main>
     );
 }

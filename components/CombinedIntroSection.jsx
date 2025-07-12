@@ -35,9 +35,8 @@ export default function CombinedIntroSection() {
                 >
                     <ProfileCard
                         name="Daniele Gregori"
-                        // Ho aggiornato il titolo per riflettere la tua specializzazione
                         title="Cybersecurity Specialist"
-                        handle="daniele-gregori" // Usiamo il tuo nome come handle
+                        handle="daniele-gregori"
                         status="Aperto a collaborazioni"
                         contactText="Contattami →"
                         onContactClick={handleContactClick}
@@ -60,11 +59,9 @@ export default function CombinedIntroSection() {
                         Costruisco e Proteggo Esperienze Digitali.
                     </h1>
                     <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        {/* Testo riscritto per essere più incisivo e basato sul CV */}
                         Studente di Laurea Magistrale in Computer Science con specializzazione in Cybersecurity. La mia passione è unire lo sviluppo di software robusto con le strategie di sicurezza necessarie per difenderlo.
                     </p>
 
-                    {/* Lista aggiornata con le competenze del CV */}
                     <ul className="space-y-3 mb-8">
                         <li className="flex items-center gap-3">
                             <FaShieldAlt className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
@@ -80,12 +77,22 @@ export default function CombinedIntroSection() {
                         </li>
                     </ul>
 
-                    <Link
-                        href="/about"
-                        className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-                    >
-                        Scopri di più su di me →
-                    </Link>
+                    {/* --- BOTTONI AGGIORNATI --- */}
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                        <Link
+                            href="/about"
+                            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                        >
+                            Scopri di più su di me
+                        </Link>
+                        <a
+                            href="/CV-Daniele-Gregori.pdf"
+                            download="CV-Daniele-Gregori.pdf"
+                            className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                        >
+                            Scarica il mio CV
+                        </a>
+                    </div>
                 </motion.div>
             </div>
         </motion.section>
