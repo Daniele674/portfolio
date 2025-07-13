@@ -1,5 +1,6 @@
 // app/layout.js
 import './globals.css';
+import {SpeedInsights} from "@vercel/speed-insights/next";
 import { Providers } from './providers';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
             <div className="flex flex-col min-h-screen">
                 <Header />
                 {children}
+                <SpeedInsights />
                 <Footer />
             </div>
         </Providers>

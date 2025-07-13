@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2231e456-ab89-4879-9ac6-a99342d31931" name="Changes" comment="Refactor ProjectsPage to use ProjectsInner component; implement filtering and loading states">
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -184,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752345523997</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactor ProjectsPage to use ProjectsInner component; implement filtering and loading states">
+      <option name="closed" value="true" />
+      <created>1752419290027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752419290027</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +222,7 @@
     <MESSAGE value="Update CombinedIntroSection, Footer, and portfolio.js to enhance cybersecurity focus and update personal information" />
     <MESSAGE value="Update CombinedIntroSection, Footer, and page.js to enhance cybersecurity focus and add CV download links" />
     <MESSAGE value="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor FeaturedProjects component to use useRouter for navigation; update ProjectsGrid to handle initial project from URL" />
+    <MESSAGE value="Refactor ProjectsPage to use ProjectsInner component; implement filtering and loading states" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor ProjectsPage to use ProjectsInner component; implement filtering and loading states" />
   </component>
 </project>
