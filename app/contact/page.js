@@ -117,7 +117,7 @@ export default function ContactPage() {
                                     </li>
                                     <li className="flex items-center gap-4">
                                         <FaGithub className="text-2xl text-blue-500 dark:text-blue-400"/>
-                                        <a href="https://github.com/Daniele-Gregori" target="_blank"
+                                        <a href="https://github.com/Daniele674" target="_blank"
                                            rel="noopener noreferrer"
                                            className="text-lg text-gray-700 dark:text-gray-300 hover:underline">GitHub</a>
                                     </li>

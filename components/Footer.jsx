@@ -29,7 +29,7 @@ export default function Footer() {
                         </a>
                     </div>
                     <div className="flex items-center gap-5">
-                        <a href="https://github.com/Daniele-Gregori"
+                        <a href="https://github.com/Daniele674"
                            target="_blank" rel="noopener noreferrer"
                            aria-label="GitHub"
                            className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
