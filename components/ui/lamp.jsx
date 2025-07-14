@@ -1,9 +1,12 @@
+// components/ui/lamp.jsx
+
 "use client";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export function LampDemo() {
+    // Questa parte è solo un esempio, il vero componente è LampContainer
     return (
         <LampContainer>
             <motion.h1
@@ -28,7 +31,7 @@ export const LampContainer = ({
     return (
         <div
             className={cn(
-                "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
+                "relative flex h-[45rem] flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
                 className
             )}>
             <div
