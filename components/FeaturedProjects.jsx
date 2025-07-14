@@ -23,8 +23,8 @@ export default function FeaturedProjects() {
             transition={{ duration: 0.5 }}
         >
             <div className="max-w-6xl mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                    <div className="text-center lg:text-left">
+                <div className="flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center gap-8">
+                    <div className="text-center lg:text-left w-full max-w-md">
                         <motion.h2
                             className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100"
                             initial={{ opacity: 0, x: -20 }}
@@ -44,12 +44,13 @@ export default function FeaturedProjects() {
                             Una selezione dei progetti che meglio rappresentano il mio percorso. Ogni card è un invito a scoprire i dettagli del progetto.
                         </motion.p>
                         <motion.div
+                            className="flex justify-center lg:justify-start"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            <a // Cambiato in 'a' per coerenza, ma Link andava bene
+                            <a
                                 href="/projects"
                                 className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
                             >
@@ -58,7 +59,7 @@ export default function FeaturedProjects() {
                         </motion.div>
                     </div>
                     <motion.div
-                        className="relative h-[400px] w-full max-w-sm mx-auto lg:max-w-none"
+                        className="relative h-[400px] w-full max-w-sm mx-auto flex justify-center lg:max-w-none mt-6 lg:mt-0"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
@@ -71,8 +72,6 @@ export default function FeaturedProjects() {
                             pauseOnHover={true}
                         >
                             {featuredProjects.map((project) => (
-                                // 3. ABBIAMO RIMOSSO IL WRAPPER <Link>
-                                //    E AGGIUNTO UN onClick ALLA CARD
                                 <Card
                                     key={project.title}
                                     onClick={() => router.push(`/projects?open=${encodeURIComponent(project.title)}`)}
