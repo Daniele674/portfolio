@@ -3,11 +3,11 @@
 'use client';
 
 // 1. IMPORTA useRouter DA next/navigation
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { featuredProjects } from '@/data/portfolio';
-import CardSwap, { Card } from '@/components/ui/Components/CardSwap/CardSwap';
-import { FiArrowRight } from 'react-icons/fi';
+import {useRouter} from 'next/navigation';
+import {motion} from 'framer-motion';
+import {featuredProjects} from '@/data/portfolio';
+import CardSwap, {Card} from '@/components/ui/Components/CardSwap/CardSwap';
+import {FiArrowRight} from 'react-icons/fi';
 
 export default function FeaturedProjects() {
     // 2. CREA UN'ISTANZA DEL ROUTER
@@ -17,38 +17,39 @@ export default function FeaturedProjects() {
         <motion.section
             id="projects"
             className="mb-16 md:mb-24"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, amount: 0.2}}
+            transition={{duration: 0.5}}
         >
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center gap-8">
                     <div className="text-center lg:text-left w-full max-w-md">
                         <motion.h2
                             className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            initial={{opacity: 0, x: -20}}
+                            whileInView={{opacity: 1, x: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.6}}
                         >
                             Lavori in Primo Piano
                         </motion.h2>
                         <motion.p
                             className="text-lg text-gray-600 dark:text-gray-400 mb-8"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            initial={{opacity: 0, x: -20}}
+                            whileInView={{opacity: 1, x: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.6, delay: 0.1}}
                         >
-                            Una selezione dei progetti che meglio rappresentano il mio percorso. Ogni card è un invito a scoprire i dettagli del progetto.
+                            Una selezione dei progetti che meglio rappresentano il mio percorso. Ogni card è un invito a
+                            scoprire i dettagli del progetto.
                         </motion.p>
                         <motion.div
                             className="flex justify-center lg:justify-start"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            initial={{opacity: 0, y: 20}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.6, delay: 0.2}}
                         >
                             <a
                                 href="/projects"
@@ -60,10 +61,10 @@ export default function FeaturedProjects() {
                     </div>
                     <motion.div
                         className="relative h-[400px] w-full max-w-sm mx-auto flex justify-center lg:max-w-none mt-6 lg:mt-0"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        initial={{opacity: 0, scale: 0.9}}
+                        whileInView={{opacity: 1, scale: 1}}
+                        viewport={{once: true}}
+                        transition={{duration: 0.6, delay: 0.2}}
                     >
                         <CardSwap
                             cardDistance={20}

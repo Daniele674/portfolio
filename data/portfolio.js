@@ -77,13 +77,13 @@ export const allProjects = [
         )
     },
     {
-        title: "Piattaforma Blockchain per Log di Sicurezza",
+        title: "Project Aegis - Piattaforma Blockchain per Log di Sicurezza",
         filterCategory: "Cybersecurity",
         category: "Progetto Universitario - Blockchain",
         icon: <FaCube/>,
         image: "/projects/blockchain-isp.png", // Aggiungi un'immagine in public/projects/
         tags: ["Hyperledger Fabric", "Go", "Docker", "API"],
-        github: "https://github.com/Daniele674/isp_security_logs", // Sostituisci con il link reale
+        github: "https://github.com/Daniele674/Project-Aegis", // Sostituisci con il link reale
         live: null,
         link: "/projects/blockchain-isp",
         detailedContent: () => (
