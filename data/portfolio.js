@@ -63,7 +63,7 @@ export const allProjects = [
         icon: <FaShieldAlt/>,
         image: "/projects/tesi-magistrale.png", // Aggiungi un'immagine in public/projects/
         tags: ["Python", "NLP", "LLM", "ChromaDB"],
-        github: "https://github.com/Daniele674/downloadElastic",
+        github: "https://github.com/Daniele674/Log2CAPEC",
         live: null,
         link: "/projects/tesi-magistrale",
         detailedContent: () => (
