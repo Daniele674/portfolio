@@ -59,21 +59,21 @@ export default function CombinedIntroSection() {
                         Costruisco e Proteggo Esperienze Digitali.
                     </h1>
                     <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        Studente di Laurea Magistrale in Computer Science con specializzazione in Cybersecurity. La mia passione è unire lo sviluppo di software robusto con le strategie di sicurezza necessarie per difenderlo.
+                        Neolaureato Magistrale in Cybersecurity con 110/110 e Lode. Unisco una solida preparazione in <strong>Offensive Security</strong> a competenze d'avanguardia sull'<strong>Intelligenza Artificiale</strong> applicata alla difesa proattiva. Attualmente focalizzato sulla <strong>Cloud Security</strong>, aspiro al ruolo di Cloud Security Engineer applicando un approccio <strong>Security by Design</strong>.
                     </p>
 
                     <ul className="space-y-3 mb-8">
                         <li className="flex items-center gap-3">
                             <FaShieldAlt className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
-                            <span className="text-gray-800 dark:text-gray-200">Penetration Testing & Ethical Hacking</span>
+                            <span className="text-gray-800 dark:text-gray-200">Offensive Security & Penetration Testing</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <FaCode className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
-                            <span className="text-gray-800 dark:text-gray-200">Secure Programming e Sviluppo Web/Mobile</span>
+                            <span className="text-gray-800 dark:text-gray-200">AI per la Sicurezza Difensiva e Proattiva</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <FaNetworkWired className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
-                            <span className="text-gray-800 dark:text-gray-200">Networking e Architetture Distribuite</span>
+                            <span className="text-gray-800 dark:text-gray-200">Cloud Security & Security by Design</span>
                         </li>
                     </ul>
 

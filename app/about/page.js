@@ -22,36 +22,36 @@ import {
 const cybersecurityPillars = [
     {
         icon: <FaBug/>,
-        title: "Penetration Testing & Ethical Hacking",
+        title: "Offensive Security & Penetration Testing",
         description: "Mi metto nei panni di un attaccante per trovare le falle prima che lo faccia qualcun altro. Analizzo, testo e scopro le vulnerabilità per rendere i sistemi più robusti."
     },
     {
-        icon: <FaShieldAlt/>,
-        title: "Difesa Proattiva & Architetture Sicure",
-        description: "Progetto e costruisco sistemi pensando alla sicurezza fin dal primo giorno. Il mio obiettivo è creare infrastrutture che non solo reagiscano, ma anticipino le minacce."
+        icon: <FaBrain/>,
+        title: "AI per la Sicurezza Difensiva e Proattiva",
+        description: "Sviluppo e integro sistemi di Intelligenza Artificiale per anticipare e mitigare le minacce, trasformando dati complessi in intelligence azionabile."
     },
     {
-        icon: <FaCodeBranch/>,
-        title: "Sviluppo Sicuro (DevSecOps)",
-        description: "Integro pratiche e strumenti di sicurezza direttamente nel ciclo di sviluppo del software, automatizzando i controlli per un rilascio continuo e affidabile."
+        icon: <FaShieldAlt/>,
+        title: "Cloud Security & Security by Design",
+        description: "Progetto architetture sicure e integro pratiche di sicurezza fin dalle prime fasi di sviluppo e deployment (DevSecOps) per garantire infrastrutture scalabili e protette."
     }
 ];
 
 // --- DATI PER LA TIMELINE ---
 const timelineData = [
     {
-        date: "2023 - Presente",
-        title: "Laurea Magistrale in Computer Science",
+        date: "02/2023 - 02/2025",
+        title: "Laurea Magistrale in Cybersecurity",
         institution: "Università degli Studi di Salerno",
-        focus: "Specializzazione in Cybersecurity",
-        description: "Approfondimento di secure programming, penetration testing, ethical hacking, networking, e database (MongoDB). GPA: 30/30."
+        focus: "Votazione finale: 110/110 e Lode - Media esami: 30/30",
+        description: "Tesi sperimentale: \"Log2CAPEC: Sviluppo di un sistema basato su Large Language Models (LLM) per l'interpretazione semantica di log di sicurezza e mappatura automatica al framework MITRE CAPEC.\""
     },
     {
-        date: "2019 - 2023",
-        title: "Laurea Triennale in Computer Science",
+        date: "09/2019 - 02/2023",
+        title: "Laurea Triennale in Informatica",
         institution: "Università degli Studi di Salerno",
-        focus: "Voto: 105/110",
-        description: "Basi solide in programmazione (C, Java), database (MySQL), sviluppo web, mobile, e sistemi operativi."
+        focus: "Votazione finale: 105/110",
+        description: "Tesi: \"Precision Agriculture & AI for the Prevention of Grapevine Diseases\" (Focus su Deep Learning e Computer Vision)."
     },
     {
         date: "2014 - 2019",
@@ -64,10 +64,10 @@ const timelineData = [
 
 // --- DATI PER LE COMPETENZE A 360° ---
 const securityToolStack = [
-    {name: "Scansione e Analisi", tools: "Nessus, GVM, OWASP ZAP, Wireshark, Burp Suite"},
-    {name: "Sistemi e Container", tools: "Linux (Kali, Ubuntu), Docker, Docker Compose"},
-    {name: "Sviluppo e Scripting", tools: "Python (Flask, Scapy), Go, Bash"},
-    {name: "Database", tools: "MySQL, MongoDB, SQL Injection Techniques"}
+    {name: "Cybersecurity & Threat Intelligence", tools: "Penetration Testing (Web App & Network), Vulnerability Assessment, Ethical Hacking, OSINT, Malware Analysis. Tool: Burp Suite, Metasploit, Nmap, Nessus, Wireshark, ZAP, Kali Linux."},
+    {name: "Cloud Security & DevSecOps", tools: "Security by Design, Cloud Architecture, IAM, CI/CD Pipeline Security, IaC, Container Security. Stack: Azure AD/Entra ID, Terraform, Docker."},
+    {name: "Framework, Standard & Governance", tools: "Framework & Metodologie: MITRE ATT&CK, MITRE CAPEC, OWASP Top 10, Zero Trust. Standard e Compliance: NIST CSF 2.0, ISO/IEC 27001, NIS2, DORA."},
+    {name: "System Engineering, AI & Automation", tools: "OS & Scripting: Linux (Hardening), Windows Server, Python, Bash, SQL/NoSQL. AI: Large Language Models (LLM), Prompt Engineering, RAG."}
 ];
 
 const cybersecuritySoftSkills = [
@@ -91,9 +91,9 @@ const cybersecuritySoftSkills = [
 // --- DATI PER LE COMPETENZE LINGUISTICHE ---
 const languageSkills = [
     {lang: "Italiano", level: "Madrelingua", cert: null},
-    {lang: "Inglese", level: "C1 (Lettura) / B2 (Altro)", cert: "Cambridge First"},
-    {lang: "Francese", level: "B2", cert: "DELF B2"},
-    {lang: "Spagnolo", level: "B2 (Lettura) / B1 (Altro)", cert: null}
+    {lang: "Inglese", level: "Competente", cert: "B2 First - Cambridge Assessment"},
+    {lang: "Francese", level: "Competente", cert: "DELF B2"},
+    {lang: "Spagnolo", level: "Conversazionale", cert: null}
 ];
 
 
@@ -110,11 +110,8 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg font-bold text-gray-800 dark:text-gray-200 mt-1">
                     {item.focus}
-                    {item.description.includes("GPA: 30/30") && (
-                        <span className="ml-2">(GPA: 30/30)</span>
-                    )}
                 </p>
-                <p className="mt-2 text-gray-600 dark:text-gray-300 text-base">{item.description.replace(" GPA: 30/30.", "")}</p>
+                <p className="mt-2 text-gray-600 dark:text-gray-300 text-base">{item.description}</p>
             </div>
         )
     }));
