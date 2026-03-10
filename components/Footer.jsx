@@ -32,13 +32,13 @@ export default function Footer() {
                         <a href="https://github.com/Daniele674"
                            target="_blank" rel="noopener noreferrer"
                            aria-label="GitHub"
-                           className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                           className="p-2 -m-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                             <FaGithub size={24}/>
                         </a>
                         <a href="https://linkedin.com/in/daniele-gregori"
                            target="_blank" rel="noopener noreferrer"
                            aria-label="LinkedIn"
-                           className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                           className="p-2 -m-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                             <FaLinkedin size={24}/>
                         </a>
                     </div>
@@ -51,7 +51,7 @@ export default function Footer() {
                     <a
                         href="/CV-Daniele-Gregori.pdf"
                         download="CV-Daniele-Gregori.pdf"
-                        className="font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+                        className="p-2 -m-2 font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
                     >
                         Scarica il mio CV
                     </a>

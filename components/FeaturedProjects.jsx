@@ -45,7 +45,7 @@ export default function FeaturedProjects() {
                             scoprire i dettagli del progetto.
                         </motion.p>
                         <motion.div
-                            className="flex justify-center lg:justify-start"
+                            className="flex justify-center lg:justify-start w-full"
                             initial={{opacity: 0, y: 20}}
                             whileInView={{opacity: 1, y: 0}}
                             viewport={{once: true}}
@@ -53,14 +53,14 @@ export default function FeaturedProjects() {
                         >
                             <a
                                 href="/projects"
-                                className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+                                className="w-full sm:w-auto text-center inline-block bg-blue-600 text-white px-8 py-4 sm:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
                             >
                                 Scopri tutti i progetti →
                             </a>
                         </motion.div>
                     </div>
                     <motion.div
-                        className="relative h-[400px] w-full max-w-sm mx-auto flex justify-center lg:max-w-none mt-6 lg:mt-0"
+                        className="relative h-[400px] w-full max-w-sm mx-auto flex justify-center lg:max-w-none mt-16 md:mt-20 lg:mt-0"
                         initial={{opacity: 0, scale: 0.9}}
                         whileInView={{opacity: 1, scale: 1}}
                         viewport={{once: true}}

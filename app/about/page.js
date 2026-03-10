@@ -187,9 +187,9 @@ export default function AboutPage() {
                     </h2>
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
                         <div className="lg:col-span-2">
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Arsenale
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center sm:text-left">Arsenale
                                 Tecnico</h3>
-                            <div className="space-y-4">
+                            <div className="space-y-4 text-center sm:text-left">
                                 {securityToolStack.map(item => (
                                     <div key={item.name}>
                                         <p className="font-semibold text-blue-600 dark:text-blue-400">{item.name}</p>
@@ -199,11 +199,11 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="lg:col-span-3">
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">Mentalità e Soft
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center sm:text-left">Mentalità e Soft
                                 Skills</h3>
                             <div className="space-y-6">
                                 {cybersecuritySoftSkills.map(skill => (
-                                    <div key={skill.title} className="flex gap-4 items-start">
+                                    <div key={skill.title} className="flex flex-col sm:flex-row gap-4 items-center sm:items-start text-center sm:text-left">
                                         <div
                                             className="text-2xl text-blue-500 dark:text-blue-400 pt-1">{skill.icon}</div>
                                         <div>
@@ -268,17 +268,17 @@ export default function AboutPage() {
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
                         Scarica il mio curriculum per una visione completa del mio percorso o contattami direttamente.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 w-full">
                         <a
                             href="/CV-Daniele-Gregori.pdf"
                             download="CV-Daniele-Gregori.pdf"
-                            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                            className="w-full sm:w-auto text-center inline-block bg-blue-600 text-white px-8 py-4 sm:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
                         >
                             Scarica CV
                         </a>
                         <Link
                             href="/contact"
-                            className="inline-block bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                            className="w-full sm:w-auto text-center inline-block bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-8 py-4 sm:py-3 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                         >
                             Contattami →
                         </Link>

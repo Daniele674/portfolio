@@ -37,7 +37,7 @@ export default function ProjectsInner() {
                             <button
                                 key={category}
                                 onClick={() => setActiveFilter(category)}
-                                className={`px-5 py-2 text-sm font-semibold rounded-full transition-colors duration-300 ${
+                                className={`px-6 sm:px-5 py-3 sm:py-2 text-base sm:text-sm font-semibold rounded-full transition-colors duration-300 ${
                                     activeFilter === category
                                         ? 'bg-blue-600 text-white shadow-lg'
                                         : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'

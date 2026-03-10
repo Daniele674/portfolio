@@ -24,11 +24,11 @@ export default function CombinedIntroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center">
 
                 {/* Colonna Sinistra: La Profile Card */}
                 <motion.div
-                    className="md:col-span-2 flex justify-center"
+                    className="lg:col-span-2 flex justify-center"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,45 +50,45 @@ export default function CombinedIntroSection() {
 
                 {/* Colonna Destra: Testo aggiornato dal CV */}
                 <motion.div
-                    className="md:col-span-3"
+                    className="lg:col-span-3"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center sm:text-left">
                         Costruisco e Proteggo Esperienze Digitali.
                     </h1>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center sm:text-left">
                         Neolaureato Magistrale in Cybersecurity con 110/110 e Lode. Unisco una solida preparazione in <strong>Offensive Security</strong> a competenze d'avanguardia sull'<strong>Intelligenza Artificiale</strong> applicata alla difesa proattiva. Attualmente focalizzato sulla <strong>Cloud Security</strong>, aspiro al ruolo di Cloud Security Engineer applicando un approccio <strong>Security by Design</strong>.
                     </p>
 
                     <ul className="space-y-3 mb-8">
-                        <li className="flex items-center gap-3">
+                        <li className="flex items-center justify-center sm:justify-start gap-3">
                             <FaShieldAlt className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
                             <span className="text-gray-800 dark:text-gray-200">Offensive Security & Penetration Testing</span>
                         </li>
-                        <li className="flex items-center gap-3">
+                        <li className="flex items-center justify-center sm:justify-start gap-3">
                             <FaCode className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
                             <span className="text-gray-800 dark:text-gray-200">AI per la Sicurezza Difensiva e Proattiva</span>
                         </li>
-                        <li className="flex items-center gap-3">
+                        <li className="flex items-center justify-center sm:justify-start gap-3">
                             <FaNetworkWired className="text-blue-500 dark:text-blue-400 flex-shrink-0" size={20}/>
                             <span className="text-gray-800 dark:text-gray-200">Cloud Security & Security by Design</span>
                         </li>
                     </ul>
 
-                    {/* --- BOTTONI AGGIORNATI --- */}
-                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                    {/* --- BOTTONI AGGIORNATI CON MIGLIORE UX MOBILE --- */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-start justify-end sm:justify-start gap-4 w-full">
                         <Link
                             href="/about"
-                            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                            className="inline-block bg-blue-600 text-white px-6 py-4 sm:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg text-center"
                         >
                             Scopri di più su di me
                         </Link>
                         <a
                             href="/CV-Daniele-Gregori.pdf"
                             download="CV-Daniele-Gregori.pdf"
-                            className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                            className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-4 sm:py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-center"
                         >
                             Scarica il mio CV
                         </a>

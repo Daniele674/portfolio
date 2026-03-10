@@ -58,7 +58,7 @@ export default function Header() {
                 {/* Menu Hamburger (visibile solo su mobile) */}
                 <div className="md:hidden flex items-center gap-4">
                     <ThemeSwitcher/>
-                    <button onClick={() => setIsOpen(!isOpen)} aria-label="Apri menu">
+                    <button onClick={() => setIsOpen(!isOpen)} aria-label="Apri menu" className="p-2 -m-2">
                         <FiMenu size={24} className="text-gray-800 dark:text-gray-200"/>
                     </button>
                 </div>
@@ -79,7 +79,7 @@ export default function Header() {
                             <Link href="/" className="font-bold text-xl" onClick={() => setIsOpen(false)}>
                                 Daniele Gregori
                             </Link>
-                            <button onClick={() => setIsOpen(false)} aria-label="Chiudi menu">
+                            <button onClick={() => setIsOpen(false)} aria-label="Chiudi menu" className="p-2 -m-2">
                                 <FiX size={24} className="text-gray-800 dark:text-gray-200"/>
                             </button>
                         </div>
@@ -88,7 +88,7 @@ export default function Header() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="font-medium text-lg w-full text-center py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                    className="font-medium text-lg w-full text-center py-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}

@@ -85,7 +85,7 @@ export default function ContactPage() {
                             <StatefulButton
                                 type="button"
                                 onClick={handleFormSubmit}
-                                className="mt-4 bg-blue-600 hover:ring-blue-500"
+                                className="w-full mt-4 bg-blue-600 hover:ring-blue-500 py-4 sm:py-2 text-[15px] sm:text-sm"
                             >
                                 Invia Messaggio
                             </StatefulButton>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                                 <a
                                     href="/CV-Daniele-Gregori.pdf"
                                     download="CV-Daniele-Gregori.pdf"
-                                    className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                                    className="w-full sm:w-auto justify-center inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-4 sm:py-2 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20"
                                          fill="currentColor">
