@@ -75,6 +75,7 @@ export const allProjects = [
         github: "https://github.com/Daniele674/Log2CAPEC",
         live: null,
         link: "/projects/tesi-magistrale",
+        description: "Pipeline AI per Threat Intelligence e mapping real-time MITRE CAPEC. Automatizza la classificazione dei log per l'uso nei SOC.",
         detailedContent: () => (
             <p>
                 Architettato e sviluppato una pipeline di <strong>Threat Intelligence</strong> per l&#39;analisi automatizzata di log eterogenei (ecosistema T-Pot), risolvendo il problema dell&#39;alert fatigue nei SOC.
@@ -93,6 +94,7 @@ export const allProjects = [
         github: "https://github.com/Daniele674/Penetration-Testing-Portfolio",
         live: null,
         link: "/projects/penetration-testing",
+        description: "Penetration test end-to-end su architetture eterogenee. Sfruttamento di vulnerabilità OWASP ed action di Privilege Escalation.",
         detailedContent: () => (
             <p>
                 Condotti molteplici <strong>penetration test</strong> end-to-end su architetture eterogenee (infrastrutture di test Vulnhub, Hack The Box e laboratori locali), seguendo le metodologie standard del settore come <strong>PTES</strong> e <strong>OWASP</strong>.
@@ -111,6 +113,7 @@ export const allProjects = [
         github: "https://github.com/Daniele674/Project-Aegis",
         live: null,
         link: "/projects/blockchain-isp",
+        description: "DApp su Hyperledger Fabric per la condivisione sicura, immutabile e asincrona di Threat Intelligence decentralizzata tra ISP.",
         detailedContent: () => (
             <p>
                 Progettato e sviluppato una DApp (Decentralized Application) per un consorzio di ISP, finalizzata alla condivisione sicura, immutabile e in real-time di <strong>Threat Intelligence</strong> (Indicatori di Compromissione, attacchi DDoS, malware).
@@ -128,6 +131,7 @@ export const allProjects = [
         github: "https://github.com/dany-el92/MediCall",
         live: null,
         link: "/projects/medicall",
+        description: "App e-health in Flutter sviluppata in team per Accenture Hackathon. Prenotazione di visite mediche con un assistente AI integrato.",
         detailedContent: () => (
             <p>
                 Progettato e sviluppato in team un&#39;<strong>applicazione mobile per l&#39;e-health</strong> dedicata alla prenotazione di servizi medici, integrando un <strong>assistente virtuale intelligente</strong> per ottimizzare la user experience.
@@ -145,6 +149,7 @@ export const allProjects = [
         github: "https://github.com/Daniele674/Precision-Agriculture-and-Artificial-Intelligence-for-the-Prevention-of-Grapevine-Diseases",
         live: null,
         link: "/projects/precision-agriculture",
+        description: "Modello di Deep Learning (CNN) basato su immagini per prevedere e classificare le patologie della vite per l'agricoltura di precisione.",
         detailedContent: () => (
             <p>
                 Questo progetto di tesi triennale esplora l&#39;applicazione del Deep Learning per l&#39;agricoltura di precisione. È stato sviluppato e addestrato un modello basato su Reti Neurali Convoluzionali (CNN), sfruttando tecniche di Transfer Learning da architetture note (es. MobileNetV2), per classificare e prevedere la presenza di malattie nelle piante di vite a partire da immagini delle foglie.
