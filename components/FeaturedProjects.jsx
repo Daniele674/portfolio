@@ -93,7 +93,7 @@ export default function FeaturedProjects() {
                                         <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/10 dark:group-hover:border-blue-400/10 rounded-[24px] sm:rounded-[32px] transition-colors duration-500 pointer-events-none z-20"></div>
 
                                         {/* Top Row: Small Icon and Category */}
-                                        <div className="flex items-start justify-between mb-6 relative z-10 w-full gap-4 shrink-0">
+                                        <div className="flex items-start justify-between mb-5 relative z-10 w-full gap-4 shrink-0">
                                             <div className="flex items-center justify-center p-3.5 bg-neutral-100 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-200 rounded-2xl group-hover:bg-blue-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 shrink-0">
                                                 <div className="text-xl sm:text-2xl">
                                                     {project.icon}
@@ -106,7 +106,7 @@ export default function FeaturedProjects() {
 
                                         {/* Main Content Area */}
                                         <div className="flex flex-col flex-grow justify-start relative z-10 w-full overflow-hidden">
-                                            <h3 className="font-extrabold tracking-tight mb-3 transition-colors duration-500 text-xl sm:text-2xl">
+                                            <h3 className="font-extrabold tracking-tight mb-4 transition-colors duration-500 text-xl sm:text-2xl">
                                                 <span className="bg-clip-text text-transparent bg-gradient-to-br from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500 group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400">
                                                     {project.title}
                                                 </span>

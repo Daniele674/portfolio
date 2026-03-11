@@ -38,7 +38,7 @@ const CardContent = ({ project, isFeatured }) => {
             />
 
             {/* Top Row: Small Icon and Category */}
-            <div className="flex items-start justify-between mb-6 relative z-10 w-full gap-4 shrink-0">
+            <div className="flex items-start justify-between mb-5 relative z-10 w-full gap-4 shrink-0">
                 <div className="flex items-center justify-center p-3.5 bg-neutral-100 dark:bg-neutral-800/80 text-neutral-700 dark:text-neutral-200 rounded-2xl group-hover:bg-blue-500 group-hover:text-white transition-colors duration-500 shadow-sm border border-neutral-200/50 dark:border-neutral-700/50 shrink-0">
                     <div className="text-xl sm:text-2xl">
                         {project.icon}
@@ -51,7 +51,7 @@ const CardContent = ({ project, isFeatured }) => {
 
             {/* Main Content Area */}
             <div className="flex flex-col flex-grow justify-start relative z-10 w-full">
-                <h3 className={`font-bold tracking-tight leading-snug mb-3 transition-colors duration-500 ${isFeatured ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl'}`}>
+                <h3 className={`font-bold tracking-tight leading-snug mb-4 transition-colors duration-500 ${isFeatured ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl'}`}>
                     <span className="bg-clip-text text-transparent bg-gradient-to-br from-neutral-900 to-neutral-500 dark:from-white dark:to-neutral-500 group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400">
                         {project.title}
                     </span>

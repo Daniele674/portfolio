@@ -31,14 +31,19 @@ export default function Header() {
     }, []);
 
     return (
-        // Header diventa sticky, con sfondo sfocato e un bordo inferiore
-        <header
-            className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${
-                scrolled 
-                    ? 'bg-white/80 dark:bg-gray-900/80 py-3 shadow-md border-gray-200 dark:border-gray-800' 
-                    : 'bg-white/50 dark:bg-gray-900/50 py-5 border-transparent'
-            }`}
-        >
+        <>
+            {/* Spazio vuoto segnaposto per compensare l'altezza dell'header fixed ed evitare scatti o sovrapposizioni iniziali */}
+            <div className={`w-full transition-all duration-300 ${scrolled ? 'h-[52px]' : 'h-[76px]'}`} aria-hidden="true" />
+            
+            {/* Header diventa fixed e usa layoutRoot per isolare le coordinate di Framer Motion dallo scroll del documento */}
+            <motion.header
+                layoutRoot
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b ${
+                    scrolled 
+                        ? 'bg-white/80 dark:bg-gray-900/80 py-3 shadow-md border-gray-200 dark:border-gray-800' 
+                        : 'bg-white/50 dark:bg-gray-900/50 py-5 border-transparent'
+                }`}
+            >
             <nav className="w-full max-w-4xl mx-auto flex items-center justify-between px-4">
                 {/* Logo / Nome */}
                 <Link
@@ -64,20 +69,25 @@ export default function Header() {
                                         : 'text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white'
                                 }`}
                             >
-                                {hoveredLink === link.name && (
+                                {/* Hover Background */
+                                hoveredLink === link.name && (
                                     <motion.span
-                                        layoutId="nav-hover"
                                         className="absolute inset-0 bg-gray-100 dark:bg-gray-800 rounded-lg -z-10"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.15 }}
                                     />
                                 )}
                                 {link.name}
+                                
+                                {/* Active Underline */}
                                 {isActive && (
                                     <motion.div
-                                        layoutId="nav-active"
-                                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-600 dark:bg-blue-400"
+                                        className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-blue-600 dark:bg-blue-400 origin-center"
+                                        initial={{ opacity: 0, scaleX: 0 }}
+                                        animate={{ opacity: 1, scaleX: 1 }}
+                                        transition={{ duration: 0.2 }}
                                     />
                                 )}
                             </Link>
@@ -144,6 +154,7 @@ export default function Header() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </header>
+        </motion.header>
+        </>
     );
 }

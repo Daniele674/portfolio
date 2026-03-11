@@ -24,7 +24,7 @@ export default function CombinedIntroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
         >
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-center">
 
                 {/* Colonna Sinistra: La Profile Card */}
                 <motion.div
@@ -55,10 +55,10 @@ export default function CombinedIntroSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center sm:text-left">
+                    <h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-gray-900 dark:text-gray-100 mb-4 text-center sm:text-left">
                         Costruisco e Proteggo Esperienze Digitali.
                     </h1>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 text-center sm:text-left">
+                    <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400 mb-6 text-center sm:text-left max-w-2xl mx-auto sm:mx-0">
                         Neolaureato Magistrale in Cybersecurity con 110/110 e Lode. Unisco una solida preparazione in <strong>Offensive Security</strong> a competenze d'avanguardia sull'<strong>Intelligenza Artificiale</strong> applicata alla difesa proattiva. Attualmente focalizzato sulla <strong>Cloud Security</strong>, aspiro al ruolo di Cloud Security Engineer applicando un approccio <strong>Security by Design</strong>.
                     </p>
 
@@ -81,14 +81,14 @@ export default function CombinedIntroSection() {
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-start justify-end sm:justify-start gap-4 w-full">
                         <Link
                             href="/about"
-                            className="inline-block bg-blue-600 text-white px-6 py-4 sm:py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg text-center"
+                            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 sm:py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg text-center"
                         >
                             Scopri di più su di me
                         </Link>
                         <a
                             href="/CV-Daniele-Gregori.pdf"
                             download="CV-Daniele-Gregori.pdf"
-                            className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-4 sm:py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-center"
+                            className="inline-block bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-6 py-4 sm:py-3 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 text-center"
                         >
                             Scarica il mio CV
                         </a>
