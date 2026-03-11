@@ -2,7 +2,7 @@
 
 'use client'
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {motion, AnimatePresence} from 'framer-motion';
@@ -19,12 +19,27 @@ const navLinks = [
 export default function Header() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false); // Stato per il menu mobile
+    const [scrolled, setScrolled] = useState(false);
+    const [hoveredLink, setHoveredLink] = useState(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+             setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         // Header diventa sticky, con sfondo sfocato e un bordo inferiore
         <header
-            className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-            <nav className="w-full max-w-4xl mx-auto flex items-center justify-between py-4 px-4">
+            className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${
+                scrolled 
+                    ? 'bg-white/80 dark:bg-gray-900/80 py-3 shadow-md border-gray-200 dark:border-gray-800' 
+                    : 'bg-white/50 dark:bg-gray-900/50 py-5 border-transparent'
+            }`}
+        >
+            <nav className="w-full max-w-4xl mx-auto flex items-center justify-between px-4">
                 {/* Logo / Nome */}
                 <Link
                     href="/"
@@ -35,24 +50,42 @@ export default function Header() {
                 </Link>
 
                 {/* Navigazione Desktop */}
-                <div className="hidden md:flex items-center gap-4 sm:gap-6">
+                <div className="hidden md:flex items-center gap-2 sm:gap-4 relative" onMouseLeave={() => setHoveredLink(null)}>
                     {navLinks.map((link) => {
                         const isActive = pathname === link.href;
                         return (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm sm:text-base font-medium transition-colors ${
+                                onMouseEnter={() => setHoveredLink(link.name)}
+                                className={`relative px-3 py-2 text-sm sm:text-base font-medium transition-colors ${
                                     isActive
                                         ? 'text-blue-600 dark:text-blue-400'
                                         : 'text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white'
                                 }`}
                             >
+                                {hoveredLink === link.name && (
+                                    <motion.span
+                                        layoutId="nav-hover"
+                                        className="absolute inset-0 bg-gray-100 dark:bg-gray-800 rounded-lg -z-10"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    />
+                                )}
                                 {link.name}
+                                {isActive && (
+                                    <motion.div
+                                        layoutId="nav-active"
+                                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-600 dark:bg-blue-400"
+                                    />
+                                )}
                             </Link>
                         );
                     })}
-                    <ThemeSwitcher/>
+                    <div className="pl-2 border-l border-gray-200 dark:border-gray-700">
+                        <ThemeSwitcher/>
+                    </div>
                 </div>
 
                 {/* Menu Hamburger (visibile solo su mobile) */}
@@ -72,28 +105,41 @@ export default function Header() {
                         animate={{opacity: 1, y: 0}}
                         exit={{opacity: 0, y: -20}}
                         transition={{duration: 0.2}}
-                        className="md:hidden absolute top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-lg z-40"
+                        className="md:hidden absolute top-0 left-0 w-full bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl shadow-2xl z-40 border-b border-gray-200 dark:border-gray-800"
                     >
                         <div
-                            className="flex justify-between items-center px-4 py-4 border-b border-gray-200 dark:border-gray-800">
-                            <Link href="/" className="font-bold text-xl" onClick={() => setIsOpen(false)}>
+                            className="flex justify-between items-center px-4 py-5 border-b border-gray-200 dark:border-gray-800">
+                            <Link href="/" className="font-bold text-xl text-gray-900 dark:text-gray-100" onClick={() => setIsOpen(false)}>
                                 Daniele Gregori
                             </Link>
                             <button onClick={() => setIsOpen(false)} aria-label="Chiudi menu" className="p-2 -m-2">
                                 <FiX size={24} className="text-gray-800 dark:text-gray-200"/>
                             </button>
                         </div>
-                        <div className="flex flex-col items-center py-6">
-                            {navLinks.map((link) => (
-                                <Link
+                        <div className="flex flex-col items-center py-6 px-4 gap-2">
+                            {navLinks.map((link, index) => {
+                                const isActive = pathname === link.href;
+                                return (
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    className="font-medium text-lg w-full text-center py-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                                    onClick={() => setIsOpen(false)}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.1 + 0.1 }}
+                                    className="w-full"
                                 >
-                                    {link.name}
-                                </Link>
-                            ))}
+                                    <Link
+                                        href={link.href}
+                                        className={`block font-medium w-full text-center py-4 rounded-xl transition-colors ${
+                                            isActive
+                                                ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400'
+                                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                                        }`}
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
+                            )})}
                         </div>
                     </motion.div>
                 )}
